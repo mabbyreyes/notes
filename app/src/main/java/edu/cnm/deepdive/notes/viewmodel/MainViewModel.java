@@ -36,7 +36,7 @@ public class MainViewModel extends AndroidViewModel {
     return throwable;
   }
 
-  public void setNote(long id) {
+  public void setNoteId(long id) {
     throwable.setValue(null);
     repository.get(id)
         .subscribe(
@@ -45,9 +45,9 @@ public class MainViewModel extends AndroidViewModel {
         );
   }
 
-  public void add(Note note) {
+  public void save(Note note) {
     throwable.setValue(null);
-    repository.add(note)
+    repository.save(note)
         .subscribe(
             () -> {},
             throwable::postValue
